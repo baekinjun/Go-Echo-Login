@@ -29,6 +29,15 @@ func main(){
 		if err := c.Bind(u) ;err != nil{
 			return err
 		}
+		if len(u.Name) == 0{
+			return c.HTML(http.StatusOK, "<script>window.location.href='http://localhost:1324/join';alert('이름을 입력하세요')</sript>")
+		}
+		if len(u.Identify) < 5{
+			return c.HTML(http.StatusOK, "<script>window.location.href='http://localhost:1324/join';alert('아이디를 입력하세요')</sript>")
+		}
+		if len(u.Name) < 8{
+			return c.HTML(http.StatusOK, "<script>window.location.href='http://localhost:1324/join';alert('패스워드를 입력하세요')</sript>")
+		}
 
 		ur := &User {
 			Identify: u.Identify,

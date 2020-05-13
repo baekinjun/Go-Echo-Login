@@ -42,10 +42,7 @@ func main(){
 		}
 		return c.JSON(http.StatusCreated , r)
 	})
-	e.POST("/join",func(c echo.Context)error{
 
-
-	})
 	e.Logger.Fatal(e.Start(":1324"))
 
 }
