@@ -15,7 +15,7 @@ type User struct{
 }
 
 func main(){
-	db, err := gorm.Open("mysql", "root:qordls7410@tcp(localhost:3306)/WIKI")
+	db, err := gorm.Open("mysql", "root:(yourpassowrd)@tcp(localhost:3306)/WIKI")
 	if err != nil {
 		panic("failed to connect to database")
 	}
